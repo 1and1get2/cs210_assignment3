@@ -1,0 +1,96 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html 
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+   <link rel="stylesheet" href="http://www.cs.auckland.ac.nz/~mano/manos.css" type="text/css" />
+   <title>COMPSCI 210: Assignment #3 - Marking Guidelines </title>
+</head>
+<body style="background-color: #ffffce">
+   <h2>
+      COMPSCI 210: Assignment #3 - Marking Guidelines
+   </h2>
+   <p>
+      As specified in the assignment specification, we will be marking the assignment
+      automatically (or semi-automatically).
+   </p>
+   <p>
+      We have provided you with a copy of our marking script <a href="markMe.sh">markMe.sh</a>
+      which you will be able to execute on <span class="code">login.cs.auckland.ac.nz</span>.
+      Please test your assignment thoroughly and run through the marking script before
+      submission.
+   </p>
+   <p>
+      The marking script is a shell script (akin to a BAT file on a DOS system, but far
+      more advanced). Shell scripting allows familiar programming constructs (such as
+      for loops and if blocks) albeit the syntax can be a little rough when you look at
+      it first.
+   </p>
+   <p>
+      The first line of the script starts with a hash-bang-slash: the slash-bin slash-sh
+      part tells the operating system that it is the program <span class="code">/bin/sh</span>that
+      is going to run (i.e. interpret) this file. You can execute any commands (i.e. applications),
+      user-defined or system-supplied, within a shell script. Part of the exercise in
+      this assignment is to study the shell script and see what it is doing.
+   </p>
+   <p>
+      The main idea behind automatic marking is that if there is no difference between
+      the outputs of the reference solution (i.e. the supplied sample solution) and your
+      solution for the same set of inputs, then your solution is deemed similar to the
+      reference solution, and thus you get full marks for the part that is tested.
+   </p>
+   <p>
+      Note that there will be no partial marks for any sub-part, so it is important that
+      you get right as many parts as you possibly can.
+   </p>
+   <p>
+      Here is a rough outline of how you will set up the test environment.
+   </p>
+   <ol>
+      <li>Make a directory called <span class="code">Assignment3</span> somewhere suitable.</li>
+      <li>Copy the script <span class="code">markMe.sh</span> to this directory.</li>
+      <li>Make the script executable: <span class="code">chmod +x markMe.sh</span></li>
+      <li>Copy the sample solution provided to you: a3ss.s to this directory as well.
+      </li>
+      <li>Make a sub-directory called <span class="code">a3</span> and copy your solution
+         files there.</li>
+      <li>Go to the top-level directory <span class="code">Assignment3</span> and run the
+         script by issuing the command <span class="code">./markMe.sh</span>.
+   </ol>
+   <p>
+      Here's a sample session of testing:
+   </p>
+   <pre>
+sman063@login01%  mkdir Assignment3
+sman063@login01%  cd Assignment3/
+sman063@login01%  cp ../markMe.sh .
+sman063@login01%  chmod +x markMe.sh 
+sman063@login01%  cp ../SampleSolution/a3ss.s .
+sman063@login01%  mkdir a3
+sman063@login01%  cp ../SampleSolution/main.cpp a3
+sman063@login01%  ./markMe.sh 
+Deduct 5 marks if compiler warnings exist
+Checking Solution ------------- Total 10 marks
+No news is good news
+
+Checking Solution ------------- Total 30 marks
+No news is good news
+
+Checking Solution ------------- Total 60 marks
+No news is good news
+
+sman063@login01%  
+</pre>
+   <p>
+      Note that we will not use the same inputs supplied in the marking script when we
+      are marking (<a href="bogus.cpp">why shouldn't we?</a>), so it is important that
+      you test your solutions extensively and validate your results before attempting
+      to check your solutions using the marking script.
+   </p>
+   <hr />
+   <p>
+      Last updated: <em>Mon 02 July 2012 16:14:41 NZST </em>
+   </p>
+</body>
+</html>
