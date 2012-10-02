@@ -139,10 +139,17 @@ void transform(char* hex) {
 	cout << bin2dec(bin) << endl;
 }
 int main(int argc, char* argv[]) {
+	// comment next line, only for debug
+//	cout << "argc: " << argc << endl;
+	//long sum = 0;
 	for (int i = 1; i < argc; i++) {
+		//long a;
+		//::sscanf(argv[i], "%1x", &a);
+		//sum += a;
 		if (DEBUG)
 			cout << "<---------" << argv[i] << "--------->" << endl;
 		transform(argv[i]);
 	}
+	//cout << "sum: " << sum << endl;
 	return 0;
 }

@@ -139,10 +139,7 @@ void transform(char* hex) {
 	cout << bin2dec(bin) << endl;
 }
 int main(int argc, char* argv[]) {
-	for (int i = 1; i < argc; i++) {
-		if (DEBUG)
-			cout << "<---------" << argv[i] << "--------->" << endl;
-		transform(argv[i]);
-	}
+	// transform(argv[i]);
+	int length;
 	return 0;
 }
