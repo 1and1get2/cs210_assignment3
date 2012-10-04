@@ -14,19 +14,20 @@
  abcdef70:	91453424
  * */
 #include<iostream>
-//#include<cstdio>
+using namespace std;
+#include<cstdio>
 #include<string>
 #include<cmath>
 #ifndef DEBUG
-#define DEBUG 0
+#define DEBUG 1
 #endif
 
-using namespace std;
 
 
+/*
 string hex2unitvarBin(string sHex) {
 	string sReturn = "";
-	for (int i = 0; i < (int)sHex.length(); ++i) {
+	for (int i = 0; i < (int) sHex.length(); ++i) {
 		switch (sHex[i]) {
 		case '0':
 			sReturn.append("0000");
@@ -112,14 +113,13 @@ string unitvar2bin(string unitvarBin) {
 	;
 	if (DEBUG)
 		cout << "end of function unitvar2bin " << endl;
-	return (breakNextLoop ? bin : "0");//bin;
+	return (breakNextLoop ? bin : "0"); //bin;
 }
-
 int bin2dec(string bin) {
 	if (DEBUG)
 		cout << "in bin2dec: bin = " << bin << endl;
 	double decimal = 0;
-	for (int counter = 0; counter < (int)bin.length(); counter++) {
+	for (int counter = 0; counter < (int) bin.length(); counter++) {
 		if (bin.c_str()[counter] == '1')
 			//cout << "(" << bin.c_str()[counter] << ")";
 			decimal += pow(2, bin.length() - 1 - counter);
@@ -129,15 +129,8 @@ int bin2dec(string bin) {
 				<< endl;
 	return decimal;
 }
-void transform(string hex) {
+void transform(long hex) {
 	cout << hex << ":  ";
-	cout << "length of hex: " << string(hex).length() << endl;
-	//string hexStr = new string(*hex);
-	if (string(hex).length()%2 == 1){
-		string temp = "0";
-		hex = temp.append(hex);
-		if (DEBUG) cout << "after append, hex: " << hex << endl;
-	}
 	string unitvarBin = hex2unitvarBin(hex);
 	if (DEBUG)
 		cout << unitvarBin << endl;
@@ -145,12 +138,18 @@ void transform(string hex) {
 	if (DEBUG)
 		cout << "in transform: bin = " << bin << endl;
 	cout << bin2dec(bin) << endl;
-}
+}*/
+
 int main(int argc, char* argv[]) {
 	for (int i = 1; i < argc; i++) {
-		if (DEBUG)
-			cout << "<---------" << argv[i] << "--------->" << endl;
-		transform(argv[i]);
+		if (DEBUG) cout << "<---------" << argv[i] << "--------->" << endl;
+		//transform((long)argv[i]);
+		long a;
+		::sscanf(argv[i], "%lx", &a);
+		if (DEBUG) {
+			cout << dec << a << endl;
+		}
+
 	}
 	return 0;
 }
